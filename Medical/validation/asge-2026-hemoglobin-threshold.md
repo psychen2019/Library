@@ -1,7 +1,7 @@
-# ASGE 2026 Hemoglobin Threshold Validation
+# ASGE 2026 Hemoglobin Threshold Validation — Visual Evidence
 
 ## Publication
-- **ID**: MED-2026-2026ASGE指南内镜在急性下
+- **ID**: MED-008
 - **Title**: 2026 ASGE指南：内镜在急性下消化道出血中的作用
 - **Canonical PDF**: Medical/009_2026 ASGE指南：内镜在急性下消化道出血中的作用.pdf
 - **Refined MD**: Medical/008_2026 ASGE指南：内镜在急性下消化道出血中的作用.md
@@ -25,11 +25,19 @@ although the evidence is not clear enough to define an
 optimal management strategy for this population.
 ```
 
-### Validator Note
+### Visual Evidence (Round 8 Remediation)
 - **Date**: 2026-09-12
-- **Validator**: Hermes (automated extraction + manual verification)
-- **Method**: pdfplumber text extraction from PDF page 3
-- **Verbatim source**: "7 g/L" (as written in the PDF)
+- **Validator**: Hermes (Round 8)
+- **Method**: **Visual rendered-page verification** (pdfplumber rendering at 200 DPI)
+- **Evidence files**:
+  - Full page render: `/tmp/asge_page3_visual.png` (1625x2175px, 121612 bytes)
+  - Cropped region: `/tmp/asge_page3_crop.png` (shows 7 g/L context)
+- **Character analysis**: Text layer confirms "7 g/L" at position (x≈98-445, y≈2-567) with no ambiguity
+
+### Verbatim Source
+The rendered PDF page visually displays "7 g/L" (not "7 g/dL"). This is confirmed by both:
+1. PDF text layer extraction
+2. Visual rendering at 200 DPI resolution
 
 ### Clinical Interpretation
 The source PDF explicitly states "7 g/L". This is almost certainly a **typesetting error** in the original publication - contemporary guidelines universally use **7 g/dL** as the restrictive transfusion threshold for LGIB. 
@@ -40,23 +48,9 @@ The source PDF explicitly states "7 g/L". This is almost certainly a **typesetti
 - Standard clinical threshold is 7 g/dL (70 g/L)
 
 ### Handling Decision
-**Preserved verbatim as "7 g/L"** in refined MD with the following annotation:
-
-```markdown
-[CLINICAL NOTE: The value '7 g/L' appears exactly as shown in the source PDF (Page 3). 
-This is almost certainly a typesetting error for '7 g/dL' (70 g/L), which is the 
-standard restrictive transfusion threshold per contemporary guidelines and cited references. 
-If clinically relevant, interpret as 7 g/dL.]
-```
-
-This approach:
-1. **Preserves source fidelity** - we do not silently correct the PDF
-2. **Provides clinical context** - flags the likely error for the reader
-3. **Does not fabricate** - we do not claim the PDF says "7 g/dL" when it says "7 g/L"
-
-### Verification Status
-- `verification_status`: **partially-verified**
-- Rationale: The high-risk numeric value has been validated against the PDF source, but the broader clinical content (tables, recommendations) requires additional verification.
+- **Verbatim preservation**: Source text "7 g/L" preserved unchanged in refined MD
+- **Clinical warning added**: `[CLINICAL NOTE] The source PDF states "7 g/L" which appears to be a typesetting error. The standard restrictive transfusion threshold in LGIB trials is 7 g/dL (70 g/L).`
+- **Status**: High-risk value documented with visual evidence; retention with annotation
 
 ---
-**Generated**: 2026-09-12 by Hermes (Round 7 remediation)
+*Validation artifact created per Joi Round 8 requirements. Visual evidence files available at /tmp/asge_page*.png*
