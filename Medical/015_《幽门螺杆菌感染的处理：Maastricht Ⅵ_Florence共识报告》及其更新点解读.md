@@ -7,7 +7,7 @@ volume: 43
 issue: 5
 pages: "352-356"
 doi: "10.3760/cma.j.cn311367-20221014-00508"
-source_pdf: "Library/Medical-PDF/《幽门螺杆菌感染的处理：Maastricht Ⅵ_Florence共识报告》及其更新点解读.pdf"
+source_pdf: "Medical/《幽门螺杆菌感染的处理：Maastricht Ⅵ_Florence共识报告》及其更新点解读.pdf"
 extraction_method: pdftotext -layout (native text layer)
 extraction_status: verified
 text_layer: native
@@ -135,7 +135,7 @@ updated: 2026-09-10
 
 ## Source
 
-- PDF: `Library/Medical-PDF/《幽门螺杆菌感染的处理：Maastricht Ⅵ_Florence共识报告》及其更新点解读.pdf`
+- PDF: `Medical/《幽门螺杆菌感染的处理：Maastricht Ⅵ_Florence共识报告》及其更新点解读.pdf`
 - Text extraction: pdftotext -layout (native text layer)
 - Total extracted: ~416 lines
 - Page range: 352-356
