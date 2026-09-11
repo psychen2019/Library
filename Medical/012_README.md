@@ -1,4 +1,4 @@
-# Medical-PDF
+# Medical
 
 这个目录保存医学指南、专家共识、综述、原始研究等 PDF 原件。PDF 是 **canonical evidence（原始证据）**；为了让 ChatGPT / Hermes / Codex 更稳定地检索、定位和核验，推荐为需要反复调用的文献建立同名 Markdown sidecar。
 
@@ -7,7 +7,7 @@
 ## 推荐文件形态
 
 ```text
-Medical-PDF/
+Medical/
 ├─ 某文献.pdf          # 原始证据，不改写
 ├─ 某文献.md           # 可检索 sidecar，不代替 PDF
 ├─ 另一文献.pdf
@@ -106,7 +106,7 @@ updated: YYYY-MM-DD
 
 ## 与 Second-Brain 的关系
 
-`Library/Medical-PDF` 属于 source layer，不是 Second-Brain 的医学 Knowledge 目录。
+`Library/Medical` 属于 source layer，不是 Second-Brain 的医学 Knowledge 目录。
 
 - Library 回答：**原文、证据和具体页码到底说了什么？**
 - Second-Brain 回答：**结合多来源证据与真实临床使用后，我们当前怎样理解和调用这个问题？**

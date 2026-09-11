@@ -98,4 +98,4 @@ updated: YYYY-MM-DD
 
 # Source
 
-- PDF：`Medical-PDF/...pdf`
+- PDF：`Medical/...pdf`
