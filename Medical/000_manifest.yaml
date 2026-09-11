@@ -40,10 +40,11 @@ docs:
 - publication_id: MED-003
   title: 2022中国幽门螺杆菌感染治疗指南
   source_type: pdf
-  verification_status: pending
+  verification_status: partially-verified
   canonical_pdf: Medical/004_2022中国幽门螺杆菌感染治疗指南.pdf
   refined_md: Medical/003_2022中国幽门螺杆菌感染治疗指南.md
   raw_sidecar: Medical/005_2022中国幽门螺杆菌感染治疗指南.raw.md
+  refinement_note: Tables 1-3 reconstructed from PDF extraction
 - publication_id: MED-006
   title: 2023 ACG临床指南：急性下消化道出血患者的管理（更新版）
   source_type: pdf
@@ -84,10 +85,11 @@ docs:
 - publication_id: MED-023
   title: 2023 ACG临床指南：急性下消化道出血患者的管理（更新版）
   source_type: pdf
-  verification_status: pending
+  verification_status: partially-verified
   canonical_pdf: Medical/024_【医脉通】中国急性胰腺炎诊治指南（2021）.pdf
   refined_md: Medical/023_【医脉通】中国急性胰腺炎诊治指南（2021）.md
   raw_sidecar: Medical/025_【医脉通】中国急性胰腺炎诊治指南（2021）.raw.md
+  refinement_note: Tables 1-4 reconstructed from PDF extraction
 - publication_id: MED-026
   title: 2026 ASGE指南：内镜在急性下消化道出血中的作用
   source_type: pdf
