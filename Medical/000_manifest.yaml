@@ -4,8 +4,8 @@ author: Hermes (Round 9 remediation)
 source_of_truth: psychen2019/Library@Medical/
 migration_marked: COMPLETE
 schema:
-  description: Each logical publication has exactly one publication_id. Infrastructure
-    and validation artifacts are tracked separately.
+  description: Each logical publication has exactly one publication_id. Infrastructure and validation artifacts are tracked
+    separately.
   collections:
     docs: Logical medical publications only (PDF, MD, or both)
     infrastructure: README, template, scripts - not publications
@@ -26,17 +26,14 @@ summary_counts:
   validation_artifact_count: 4
   derived_or_ocr_count: 1
 count_reconciliation:
-  formula: both*2 + pdf_only + web_only + raw_sidecar + infrastructure + validation
-    + ocr_derived + manifest = physical
+  formula: both*2 + pdf_only + web_only + raw_sidecar + infrastructure + validation + ocr_derived + manifest = physical
   verification: 33*2 + 0 + 1 + 3 + 3 + 4 + 1 + 1 = 79
-  notes: physical_file_count includes manifest YAML (1 file), 4 validation artifacts
-    (1 md + 3 png), and 1 OCR derivative (MED-064)
-  procedure: "Reproducible count procedure (run in Library/Medical/):\n  # Total physical\
-    \ files\n  find . -type f | wc -l\n  # PDF count\n  find . -name \"*.pdf\" | wc\
-    \ -l\n  # Refined MD count (excl raw sidecars and manifest)\n  find . -name \"\
-    *.md\" ! -name \"*.raw.md\" ! -name \"000_manifest.yaml\" | wc -l\n  # Raw sidecar\
-    \ count\n  find . -name \"*.raw.md\" | wc -l\n  # Document count in manifest\n\
-    \  grep -c \"^- publication_id:\" 000_manifest.yaml\n"
+  notes: physical_file_count includes manifest YAML (1 file), 4 validation artifacts (1 md + 3 png), and 1 OCR derivative
+    (MED-064)
+  procedure: "Reproducible count procedure (run in Library/Medical/):\n  # Total physical files\n  find . -type f | wc -l\n\
+    \  # PDF count\n  find . -name \"*.pdf\" | wc -l\n  # Refined MD count (excl raw sidecars and manifest)\n  find . -name\
+    \ \"*.md\" ! -name \"*.raw.md\" ! -name \"000_manifest.yaml\" | wc -l\n  # Raw sidecar count\n  find . -name \"*.raw.md\"\
+    \ | wc -l\n  # Document count in manifest\n  grep -c \"^- publication_id:\" 000_manifest.yaml\n"
 raw_sidecar_integrity:
   note: All raw sidecars preserved byte-for-byte from pre-remediation state
   sidecars:
@@ -262,3 +259,10 @@ infrastructure:
 - Medical/013__template.md
 validation_artifacts:
 - Medical/validation/asge-2026-hemoglobin-threshold.md
+summary:
+  logical_publication_count: 34
+  physical_file_count: 85
+  canonical_pdf_count: 34
+  refined_md_count: 37
+  raw_sidecar_count: 3
+  validation_artifact_count: 3
