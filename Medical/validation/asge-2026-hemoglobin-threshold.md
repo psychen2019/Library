@@ -25,22 +25,23 @@ although the evidence is not clear enough to define an
 optimal management strategy for this population.
 ```
 
-### Visual Evidence (Round 9 Remediation)
+### Visual Evidence (Round 10 Remediation — Repository-Persistent)
 - **Date**: 2026-09-12
-- **Validator**: Hermes (Round 9)
+- **Validator**: Hermes (Round 10)
 - **Method**: True visual rendered-page verification via pdftoppm at 200 DPI
-- **Evidence files**:
-  - Full page render: `/tmp/asge_round9_check-03.png` (858612 bytes, 200 DPI)
-  - Previous Round 8 renders: `/tmp/asge_page3_visual.png`, `/tmp/asge_page3_crop.png`
+- **Evidence files** (committed to repository):
+  - Full page render: `Medical/validation/asge-page3-visual-evidence.png` (858,612 bytes, 200 DPI)
+  - Crop (7 g/L region): `Medical/validation/asge-page3-crop.png` (10,941 bytes)
+  - Page 3 full render: `Medical/validation/asge-2026-page3-hemoglobin-threshold-crop.png` (858,612 bytes, 200 DPI)
 - **Character analysis**: Both text layer extraction (pdfplumber) and rendered-page verification confirm "7 g/L" with no ambiguity
 
 ### Verbatim Source
 The rendered PDF page visually displays "7 g/L" (not "7 g/dL"). This is confirmed by:
-1. PDF text layer extraction via pdfplumber: `"'a hemoglobin threshold of 7 g/L.14,15'"`
+1. PDF text layer extraction via pdfplumber: `"a hemoglobin threshold of 7 g/L.14,15"`
 2. Visual rendered-page verification via pdftoppm at 200 DPI resolution
 
 ### Clinical Interpretation
-The source PDF explicitly states "7 g/L". This is almost certainly a **typesetting error** in the original publication - contemporary guidelines universally use **7 g/dL** as the restrictive transfusion threshold for LGIB.
+The source PDF explicitly states "7 g/L". This is almost certainly a **typesetting error** in the original publication — contemporary guidelines universally use **7 g/dL** as the restrictive transfusion threshold for LGIB.
 
 **Reference check**:
 - Reference 14,15 in the ASGE 2026 guideline likely cite trials that used 7 g/dL (e.g., Villanueva et al., NEJM 2013)
@@ -50,7 +51,7 @@ The source PDF explicitly states "7 g/L". This is almost certainly a **typesetti
 ### Handling Decision
 - **Verbatim preservation**: Source text "7 g/L" preserved unchanged in refined MD
 - **Clinical warning added**: `[CLINICAL NOTE] The source PDF states "7 g/L" which appears to be a typesetting error. The standard restrictive transfusion threshold in LGIB trials is 7 g/dL (70 g/L).`
-- **Status**: High-risk value documented with visual evidence; retention with annotation
+- **Status**: High-risk value documented with persistent visual evidence in repository; retention with annotation
 
 ---
-*Validation artifact created per Joi Round 8 requirements. Round 9 updated with true visual verification method (pdftoppm).*
+*Validation artifact created per Joi Round 8 requirements. Round 9 updated with true visual verification method (pdftoppm). Round 10 updated to reference committed repository-persistent evidence.*

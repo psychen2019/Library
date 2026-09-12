@@ -4,7 +4,8 @@ author: Hermes (Round 9 remediation)
 source_of_truth: psychen2019/Library@Medical/
 migration_marked: COMPLETE
 schema:
-  description: Each logical publication has exactly one publication_id. Infrastructure and validation artifacts are tracked separately.
+  description: Each logical publication has exactly one publication_id. Infrastructure
+    and validation artifacts are tracked separately.
   collections:
     docs: Logical medical publications only (PDF, MD, or both)
     infrastructure: README, template, scripts - not publications
@@ -12,7 +13,7 @@ schema:
     raw_sidecars: Byte-identical extraction backups preserved for audit
 summary_counts:
   logical_publication_count: 34
-  physical_file_count: 76
+  physical_file_count: 79
   canonical_pdf_count: 34
   refined_md_count: 34
   raw_sidecar_count: 3
@@ -22,13 +23,20 @@ summary_counts:
   infrastructure_file_count: 3
   pdf_only_count: 0
   web_only_count: 1
+  validation_artifact_count: 4
+  derived_or_ocr_count: 1
 count_reconciliation:
-  formula: both_pdf_and_md*2 + pdf_only + web_only + raw_sidecar + infrastructure + validation = physical_file_count
-  verification: 33*2 + 0 + 1 + 3 + 3 + 1 + 1 + 1 = 76
-  notes: physical_file_count includes manifest YAML (1 file) not otherwise categorized
-  procedure: "Reproducible count procedure (run in Library/Medical/):\n  # Total physical files\n  find . -type f | wc -l\n  # PDF count\n  find . -name \"*.pdf\" | wc -l\n  # Refined MD count (excl raw\
-    \ sidecars and manifest)\n  find . -name \"*.md\" ! -name \"*.raw.md\" ! -name \"000_manifest.yaml\" | wc -l\n  # Raw sidecar count\n  find . -name \"*.raw.md\" | wc -l\n  # Document count in manifest\n\
-    \  grep -c \"^- publication_id:\" 000_manifest.yaml\n  # Verify reconciliation: both*2 + pdf_only + web_only + raw + infra + validation + manifest = physical\n"
+  formula: both*2 + pdf_only + web_only + raw_sidecar + infrastructure + validation
+    + ocr_derived + manifest = physical
+  verification: 33*2 + 0 + 1 + 3 + 3 + 4 + 1 + 1 = 79
+  notes: physical_file_count includes manifest YAML (1 file), 4 validation artifacts
+    (1 md + 3 png), and 1 OCR derivative (MED-064)
+  procedure: "Reproducible count procedure (run in Library/Medical/):\n  # Total physical\
+    \ files\n  find . -type f | wc -l\n  # PDF count\n  find . -name \"*.pdf\" | wc\
+    \ -l\n  # Refined MD count (excl raw sidecars and manifest)\n  find . -name \"\
+    *.md\" ! -name \"*.raw.md\" ! -name \"000_manifest.yaml\" | wc -l\n  # Raw sidecar\
+    \ count\n  find . -name \"*.raw.md\" | wc -l\n  # Document count in manifest\n\
+    \  grep -c \"^- publication_id:\" 000_manifest.yaml\n"
 raw_sidecar_integrity:
   note: All raw sidecars preserved byte-for-byte from pre-remediation state
   sidecars:
@@ -209,6 +217,10 @@ docs:
   verification_status: pending
   canonical_pdf: Medical/063_肝硬化腹水诊疗指南（2023年版）.pdf
   refined_md: Medical/062_肝硬化腹水诊疗指南（2023年版）.md
+  derived_artifacts:
+  - type: ocr_derivative
+    path: Medical/064_肝硬化腹水诊疗（2023）_ocr.pdf
+    note: OCR-generated derivative of MED-062, not a standalone publication
 - publication_id: MED-065
   title: 肝硬化血小板减少症临床管理实用指南
   source_type: pdf
@@ -244,11 +256,6 @@ docs:
   source_type: web_extract
   verification_status: pending
   refined_md: Medical/011_中国肠易激综合征分层诊疗及管理体系方案专家建议.md
-- publication_id: MED-064
-  title: 肝硬化腹水诊疗（2023）_ocr
-  source_type: pdf
-  verification_status: pending
-  canonical_pdf: Medical/064_肝硬化腹水诊疗（2023）_ocr.pdf
 infrastructure:
 - Medical/012_README.md
 - Medical/014_refine_md.py
