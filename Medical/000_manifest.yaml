@@ -259,10 +259,3 @@ infrastructure:
 - Medical/013__template.md
 validation_artifacts:
 - Medical/validation/asge-2026-hemoglobin-threshold.md
-summary:
-  logical_publication_count: 34
-  physical_file_count: 85
-  canonical_pdf_count: 34
-  refined_md_count: 37
-  raw_sidecar_count: 3
-  validation_artifact_count: 3
