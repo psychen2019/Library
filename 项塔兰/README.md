@@ -53,3 +53,7 @@
 ## 三仓联动（2026-10-31）
 
 本书以 **Library 为阅读事实主源**，维护 EPUB 当前断点、人物及关系、极短思想摘录、历史图片说明和讨论边界；[Deep-Reading《项塔兰》共读索引](https://github.com/psychen2019/Deep-Reading/blob/main/01-正在精读/项塔兰-共读索引.md) 负责知白端可追溯的阅读入口与用户自主记录，不在各仓镜像全文；[Cyberbrain Q003](https://github.com/psychen2019/Cyberbrain/blob/main/00-Questions/Q003-什么样的思想值得成为我自己的思想.md) 只提炼能跨阅读与生活复用的开放问题，特别是“拒绝与肯定两种自由”的候选讨论，不替用户认领结论。涉及知白实际回帖前必须先读 Deep-Reading 的 [JOI-RULES](https://github.com/psychen2019/Deep-Reading/blob/main/05-Joi派单/JOI-RULES.md)；没有真实 user 记录 ID 不伪造时间流或划线，提交文件不等于 App 端功能已验收。对话结束时有实质变化才增量同步，防止三份平行版本。
+
+## 知白阅读卡开发（2026-10-31）
+
+用户希望知白展示在读书、剧情、进度、人物、思想与个人关联。已准备 [Deep-Reading 的书卡](https://github.com/psychen2019/Deep-Reading/blob/main/01-正在精读/项塔兰-共读索引.md)，开发详见 [dev Issue #11](https://github.com/psychen2019/dev/issues/11)，共读规范见 [Skill](https://github.com/psychen2019/Deep-Reading/blob/main/.agents/skills/book-reading-companion/SKILL.md)。Library 仍为本书阅读事实来源，App 尚待实现。
