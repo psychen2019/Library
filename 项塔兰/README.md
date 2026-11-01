@@ -57,3 +57,7 @@
 ## 知白阅读卡开发（2026-10-31）
 
 用户希望知白展示在读书、剧情、进度、人物、思想与个人关联。已准备 [Deep-Reading 的书卡](https://github.com/psychen2019/Deep-Reading/blob/main/01-正在精读/项塔兰-共读索引.md)，开发详见 [dev Issue #11](https://github.com/psychen2019/dev/issues/11)，共读规范见 [Skill](https://github.com/psychen2019/Deep-Reading/blob/main/.agents/skills/book-reading-companion/SKILL.md)。Library 仍为本书阅读事实来源，App 尚待实现。
+
+## 共读背景补充 · 2026-11-01
+
+- [07 · 印度思想史与现代社会背景](./07-印度思想史与现代社会背景.md)：梳理吠陀、奥义书、佛教与耆那教、伊斯兰文化、殖民时代、宪政世俗主义和印度教民族主义，解释种姓与女性处境的复杂来源；为《项塔兰》截至第五章的文化场景提供背景，不把小说当现代印度社会调查，也不提前剧透。
